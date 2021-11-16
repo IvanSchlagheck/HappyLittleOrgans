@@ -5,8 +5,12 @@ class OrgansController < ApplicationController
     
   end
 
+  def index
+    @organs = Organ.all
+  end
+
   private
-  
+
   def organ_params
     params.require(:organ).permit(:name, :description)
   end
