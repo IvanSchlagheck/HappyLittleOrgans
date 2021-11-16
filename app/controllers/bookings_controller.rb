@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   def create
     @organ = Organ.find(params[:organ_id])
     @booking = Booking.new(booking_params)
-    @booking.user_id = 24
+    @booking.user_id = current_user.id
     @booking.organ = @organ
     @booking.save
   end
@@ -17,5 +17,3 @@ class BookingsController < ApplicationController
     params.require(:start_on).permit(:ends_at)
   end
 end
-
-# current_user.id
