@@ -1,0 +1,5 @@
+<%= simple_form_for([ @organ, @booking ]) do |f| %>
+  <%= f.input :starts_on, as: :date, html5: true %>
+  <%= f.input :ends_at, as: :date, html5: true %>
+  <%= f.submit %>
+<% end %>
