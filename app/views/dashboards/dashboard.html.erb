@@ -1,0 +1,30 @@
+<h2>You have <%= @organs.length %> organs published.</h2>
+<div class="d-flex">
+  <% @organs.each do |organ| %>
+  <div class="m-3">
+    <%= link_to organ_path(organ) do %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://source.unsplash.com/random" alt="random-picture">
+        <div class="card-body">
+          <%= organ.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+<br>
+<h2>You have <%= @bookings.length %> organs booked.</h2>
+<div class="d-flex">
+  <% @bookings.each do |booking| %>
+  <div class="m-3">
+    <%= link_to booking_path(booking) do %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://source.unsplash.com/random" alt="random-picture">
+        <div class="card-body">
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

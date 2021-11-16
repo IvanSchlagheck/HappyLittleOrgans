@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :organs, only: [:show, :index, :new, :create, :edit, :update] do
     resources :bookings, only: [ :new, :create ]
   end
-  resources :dashboard, only: [:show]
+  resources :dashboard, only: [:dashboard]
+  get 'dashboard', to: 'dashboards#dashboard', as: :dashboard
 end
