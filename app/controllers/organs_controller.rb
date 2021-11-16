@@ -1,8 +1,7 @@
 class OrgansController < ApplicationController
-  before_action :set_organ, only: [:show, :edit, :update, :destroy]
+  before_action :set_organ, only: [:show]
 
   def show
-    
   end
 
   private
