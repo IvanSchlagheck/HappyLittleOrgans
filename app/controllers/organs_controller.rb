@@ -1,5 +1,5 @@
 class OrgansController < ApplicationController
-  before_action :set_organ, only: [:show]
+  before_action :set_organ, only: [:show, :update, :edit]
 
   def show
   end
@@ -7,6 +7,15 @@ class OrgansController < ApplicationController
   def index
     @organs = Organ.all
   end
+
+  def edit
+  end
+
+  def update
+    @organ.update(organ_params)
+    redirect_to organ_path(@organ)
+  end
+
 
   private
 
