@@ -6,14 +6,19 @@ class BookingsController < ApplicationController
   def create
     @organ = Organ.find(params[:organ_id])
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
+    @booking.user = current_user
     @booking.organ = @organ
-    @booking.save
+    
+    if @booking.save
+      redirect_to @organ
+    else
+      render :new
+    end
   end
 
   private
 
   def booking_params
-    params.require(:starts_on).permit(:ends_at)
+    params.require(:booking).permit(:starts_on, :ends_at)
   end
 end
