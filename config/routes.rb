@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :organs, only: [:show, :index, :new, :create] do
     resources :bookings, only: [ :new, :create ]
   end
+  resources :dashboard, only: [:show]
 end
