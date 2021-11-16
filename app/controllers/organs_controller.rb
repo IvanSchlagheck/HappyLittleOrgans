@@ -2,6 +2,7 @@ class OrgansController < ApplicationController
   before_action :set_organ, only: [:show]
 
   def show
+    
   end
 
   def index
