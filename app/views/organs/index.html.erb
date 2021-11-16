@@ -4,7 +4,7 @@
   <div class="d-flex">
     <% @organs.each do |organ| %>
       <div class="card" style="width: 18rem;">
-        <img src="https://source.unsplash.com/random" alt="random-picture">
+        <%= cl_image_tag("ljq7igdnriivzlgfndd2", crop: :fill) %>
         <div class="card-body">
           <%= organ.name %>
         </div>
