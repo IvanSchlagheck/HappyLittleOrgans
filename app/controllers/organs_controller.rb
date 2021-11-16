@@ -1,7 +1,7 @@
 class OrgansController < ApplicationController
-  before_action :set_organ, only: [:show]
+  before_action :set_organ, only: [:show, :update, :edit]
+  skip_before_action :authenticate_user!, only: :index
 
-  
   def index
     @organs = Organ.all
   end
@@ -21,6 +21,15 @@ class OrgansController < ApplicationController
       render :new
     end
   end
+
+  def edit
+  end
+
+  def update
+    @organ.update(organ_params)
+    redirect_to organ_path(@organ)
+  end
+
 
   private
 
