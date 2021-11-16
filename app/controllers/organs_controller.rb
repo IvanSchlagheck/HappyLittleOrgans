@@ -4,7 +4,12 @@ class OrgansController < ApplicationController
   def show
   end
 
+  def index
+    @organs = Organ.all
+  end
+
   private
+
   def organ_params
     params.require(:organ).permit(:name, :description)
   end
