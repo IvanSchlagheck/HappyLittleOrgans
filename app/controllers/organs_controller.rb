@@ -1,11 +1,25 @@
 class OrgansController < ApplicationController
   before_action :set_organ, only: [:show, :update, :edit]
 
+  
+  def index
+    @organs = Organ.all
+  end
+  
   def show
   end
 
-  def index
-    @organs = Organ.all
+  def new
+    @organ = Organ.new
+  end
+
+  def create
+    @organ = Organ.new(organ_params)
+    if @organ.save
+      redirect_to @organ, notice: "Organ was created!"
+    else
+      render :new
+    end
   end
 
   def edit
