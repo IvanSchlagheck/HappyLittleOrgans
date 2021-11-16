@@ -5,6 +5,8 @@
 <p class= "h4"><%= @organ.description %> </p>
 <br>
 <br>
-<%= link_to 'All Organs', organs_path %>
-<%= link_to 'Edit', edit_organ_path(@organ) %>
+<%= link_to 'All Organs', organs_path, class: "redbutton"%>
+<%= link_to 'Edit', edit_organ_path(@organ), class: "redbutton"%>
+<%= link_to 'Book!', organs_path, class: "bookbutton"%>
+
 </div>

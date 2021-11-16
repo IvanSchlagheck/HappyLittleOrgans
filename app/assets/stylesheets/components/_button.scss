@@ -1,0 +1,25 @@
+.redbutton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #f08080;
+  transition: background 0.3s ease;
+}
+
+.redbutton:hover {
+  background: #ffccd5;
+  color: white;
+}
+.bookbutton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #38a3a5;
+  transition: background 0.3s ease;
+  text-align: right;
+}
+
+.bookbutton:hover {
+  background: #57cc99;
+  color: white;
+}
