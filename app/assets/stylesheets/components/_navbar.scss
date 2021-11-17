@@ -7,6 +7,10 @@
   flex-grow: 0;
 }
 
+.align-items-end {
+  left: 20px;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 50px;
 }
@@ -23,5 +27,10 @@ width: 100px
   text-align: left;
   color: black;
   font-size: xx-large;
+  margin-left: 22px;
+  right: 100px;
+}
 
+.navbartextlink {
+  padding-top: 22px;
 }
