@@ -1,5 +1,6 @@
 class OrgansController < ApplicationController
   before_action :set_organ, only: [:show, :update, :edit]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   def index
     @organs = Organ.all
