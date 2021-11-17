@@ -1,10 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.align-items-end {
+  left: 20px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -13,4 +20,20 @@
 
 #heartimage {
 width: 100px
+}
+
+#navbarDropdown {
+  width: 70px;
+}
+
+#headerinnavbar {
+  text-align: left;
+  color: black;
+  font-size: xx-large;
+  margin-left: 22px;
+  right: 100px;
+}
+
+.navbartextlink {
+  padding-top: 22px;
 }
