@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.organ = @organ
-    
+
     if @booking.save
-      redirect_to @organ
+      redirect_to dashboard_path
     else
       render :new
     end
