@@ -1,10 +1,10 @@
 <h2>You have <%= @organs.count %> organs published.</h2>
-<div class="d-flex">
+<div class="d-flex flex-wrap">
   <% @organs.each do |organ| %>
-  <div class="m-3">
+  <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag organ.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag organ.photo.key, height: 200, width: 285, crop: :fill %>
         <div class="card-body">
           <%= organ.name %>
         </div>
@@ -15,12 +15,12 @@
 </div>
 <br>
 <h2>You have <%= @bookings.count %> organs booked.</h2>
-<div class="d-flex">
+<div class="d-flex flex-wrap">
   <% @bookings.each do |booking| %>
-  <div class="m-3">
+  <div class="m-3" style="width: 300px">
     <%= link_to organ_path(booking.organ) do %>
     <div class="card" style="width: 18rem;">
-      <%= cl_image_tag booking.organ.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag booking.organ.photo.key, height: 200, width: 285, crop: :fill %>
       <div class="card-body">
       <%= booking.organ.name %>
       </div>
