@@ -11,5 +11,5 @@
 <% if current_user == @organ.user %>
   <%= link_to 'Edit', edit_organ_path(@organ), class: "redbutton"%>
 <% end %>
-<%= link_to 'Book!', new_organ_booking_path(@organ), class: "bookbutton"%>
+  <%= link_to 'Book!', new_organ_booking_path(@organ), class: "bookbutton"%>
 </div>
