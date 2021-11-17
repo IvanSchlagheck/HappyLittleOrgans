@@ -1,6 +1,6 @@
 class OrgansController < ApplicationController
   before_action :set_organ, only: [:show, :update, :edit]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:show]
 
   def index
     @organs = Organ.all
@@ -15,8 +15,9 @@ class OrgansController < ApplicationController
 
   def create
     @organ = Organ.new(organ_params)
+    raise
     if @organ.save
-      redirect_to @organ, notice: "Organ was created!"
+      redirect_to organ_path(@organ), notice: "Organ was created!"
     else
       render :new
     end
