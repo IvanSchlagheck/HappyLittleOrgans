@@ -4,7 +4,7 @@
   <div class="d-flex">
     <% @organs.each do |organ| %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag("ljq7igdnriivzlgfndd2", crop: :fill) %>
+        <%= cl_image_tag organ.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-body">
           <%= organ.name %>
         </div>
