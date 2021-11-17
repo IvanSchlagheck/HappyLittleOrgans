@@ -1,9 +1,11 @@
 <div class= "mx-3">
 <br>
+<%= cl_image_tag @organ.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
 <h1 class= "h2"><%= @organ.name %> </h1>
 <br>
 <p class= "h4"><%= @organ.description %> </p>
-<br>
+
 <br>
 <%= link_to 'All Organs', organs_path, class: "redbutton"%>
 <% if current_user == @organ.user %>
