@@ -1,10 +1,10 @@
 <h2>We have <%= @organs.length %> organs available for you.</h2>
-<div class="d-flex">
+<div class="d-flex flex-wrap">
   <% @organs.each do |organ| %>
-  <div class="m-3">
+  <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag organ.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag organ.photo.key, height: 200, width: 285, crop: :fill %>
         <div class="card-body">
           <%= organ.name %>
         </div>
