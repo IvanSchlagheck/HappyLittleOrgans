@@ -3,7 +3,9 @@
   <%= link_to "#", class: "navbar-brand" do %>
     <div class="d-flex align-items-end">
       <%= image_tag "https://i.pinimg.com/originals/87/45/76/874576ebe081d0b3cc15c1a519dcb6c1.gif", id: "heartimage"%>
-      <h1>HappyLittleOrgans</h1>
+      <li class="nav-item active">
+        <%= link_to "HappyLittleOrgans", root_path, class: "nav-link", id: "headerinnavbar" %>
+      </li>
     </div>
   <% end %>
 
@@ -17,8 +19,8 @@
       <li class="nav-item active">
         <%= link_to "About", pages_about_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Organs", organs_path, class: "nav-link" %>
+      <li class="nav-item active">
+        <%= link_to "Login", organs_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://image.shutterstock.com/image-vector/healthy-biological-organ-smiling-lung-260nw-1239636475.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
