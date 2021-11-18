@@ -55,7 +55,9 @@ puts "Creating organs..."
 
 file = URI.open('https://image.shutterstock.com/image-vector/strong-cute-healthy-happy-human-260nw-1394896127.jpg')
 fresh_liver = Organ.create!(
+  category: "liver",
   name: "Healthy liver for a weekend full of drinks",
+  price: 129,
   description: "Well-preserved liver, non-drinker, 22 years-old",
   user_id: user1.id)
 fresh_liver.photo.attach(io: file, filename: 'fresh_liver.png', content_type: 'image/png')
@@ -63,7 +65,9 @@ puts "Created #{fresh_liver.name}"
 
 file = URI.open('https://t3.ftcdn.net/jpg/03/07/56/74/360_F_307567493_dvQdFL5HqYzDYZ94JFZ4lK5AMoCO3ErW.jpg')
 second_hand_kidney = Organ.create!(
+  category: "kidney",
   name: "Highly profficient kidney for some quick relief!",
+  price: 99,
   description: "Used but rapid kidney, 45 years-old",
   user_id: user2.id)
 second_hand_kidney.photo.attach(io: file, filename: 'second_hand_kidney.png', content_type: 'image/png')
@@ -71,23 +75,29 @@ puts "Created #{second_hand_kidney.name}"
 
 file = URI.open('https://media.istockphoto.com/vectors/cartoon-brain-lifting-dumbbells-vector-vector-id1208760136?k=20&m=1208760136&s=170667a&w=0&h=xS9nVYewbTCqtkPvw208BfA5XO-Jk420w0tWglmOBzM=')
 super_brain = Organ.create!(
+  category: "brain",
   name: "Brain fresh out of college!",
+  price: 299,
   description: "Harvard Law graduate, 22 years-old, highly absorbant!",
   user_id: user1.id)
 super_brain.photo.attach(io: file, filename: 'super_brain.png', content_type: 'image/png')
 puts "Created #{super_brain.name}"
 
 file = URI.open('https://www.trincoll.edu/spiritualandreligiouslife/wp-content/uploads/sites/23/2020/10/5G1A0105small-1-scaled-e1601579285122.jpg')
-laughing_lungs = Organ.create!(
+high_quality_organ = Organ.create!(
+  category: "organ",
   name: "High quality organ",
+  price: 199,
   description: "With brand new pipes,this church organ can be used both in small concert rooms or big churches",
   user_id: user1.id)
-laughing_lungs.photo.attach(io: file, filename: 'laughing_lungs.png', content_type: 'image/png')
-puts "Created #{laughing_lungs.name}"
+high_quality_organ.photo.attach(io: file, filename: 'laughing_lungs.png', content_type: 'image/png')
+puts "Created #{high_quality_organ.name}"
 
 file = URI.open('https://static.vecteezy.com/system/resources/previews/002/286/136/original/cute-cartoon-smiling-healthy-human-heart-character-happy-emoji-emotion-funny-circulatory-organ-cardiology-eps-illustration-vector.jpg')
 loving_heart = Organ.create!(
+  category: "heart",
   name: "Loving heart",
+  price: 399,
   description: "This heart has gotten over many breakups and is highly resilitent. Let me help you out!",
   user_id: user1.id)
 loving_heart.photo.attach(io: file, filename: 'loving_heart.png', content_type: 'image/png')
@@ -95,7 +105,9 @@ puts "Created #{loving_heart.name}"
 
 file = URI.open('https://cdn3.vectorstock.com/i/1000x1000/21/27/strong-healthy-pancreas-cartoon-character-isolated-vector-20632127.jpg')
 happy_pancreas = Organ.create!(
+  category: "pancreas",
   name: "Sweet pancreas",
+  price: 149,
   description: "I can help with the sweetness in your life",
   user_id: user1.id)
 happy_pancreas.photo.attach(io: file, filename: 'happy_pancreas.png', content_type: 'image/png')
@@ -103,7 +115,9 @@ puts "Created #{happy_pancreas.name}"
 
 file = URI.open('https://image.shutterstock.com/image-vector/cute-funny-human-lungs-anatomy-260nw-1314207800.jpg')
 laughing_lungs = Organ.create!(
+  category: "lungs",
   name: "Laughing lungs",
+  price: 249,
   description: "Super lungs of a highly trained athlete, 32 years-old",
   user_id: user1.id)
 laughing_lungs.photo.attach(io: file, filename: 'laughing_lungs.png', content_type: 'image/png')
