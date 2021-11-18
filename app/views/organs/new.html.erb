@@ -1,6 +1,1 @@
-<%= simple_form_for @organ do |f| %>
-  <%= f.input :name, collection: ["Bladder", "Bone", "Brain", "Eyes", "Intestine", "Heart", "Kidney", "Liever", "Lungs", "Spleen", "Stomach"] %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<%= render 'form', organs: @organ %>
