@@ -15,7 +15,6 @@ class OrgansController < ApplicationController
 
   def create
     @organ = Organ.new(organ_params)
-    raise
     if @organ.save
       redirect_to organ_path(@organ), notice: "Organ was created!"
     else

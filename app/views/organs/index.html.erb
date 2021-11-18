@@ -3,14 +3,16 @@
   <% @organs.each do |organ| %>
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
-      <div class="card" style="width: 18rem;">
+    <div>
+      <div class="card-category" style="width: 18rem;">
       <% if organ.photo.attached? %>
-        <%= cl_image_tag organ.photo.key, height: 200, width: 285, crop: :fill %>
+        <%= cl_image_tag organ.photo.key, height: 160, width: 285, crop: :fill %>
       <% end %>
-        <div class="card-body">
-          <%= organ.name %>
-        </div>
       </div>
+      <div class="card-body">
+        <%= organ.name %>
+      </div>
+    </div>
     <% end %>
   </div>
   <% end %>
