@@ -4,7 +4,8 @@
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag organ.photo.key, height: 200, width: 285, crop: :fill %>
+        <%= organ.photo.attached? %>
+        <%= cl_image_tag organ.photo.key, height: 200, width: 285, crop: :fill %> 
         <div class="card-body">
           <%= organ.name %>
         </div>

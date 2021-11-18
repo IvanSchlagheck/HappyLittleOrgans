@@ -14,7 +14,8 @@ class OrgansController < ApplicationController
 
   def create
     @organ = Organ.new(organ_params)
-    raise
+    @organ.user = current_user
+    @organ.save!
     if @organ.save
       redirect_to organ_path(@organ), notice: "Organ was created!"
     else
@@ -34,7 +35,7 @@ class OrgansController < ApplicationController
   private
 
   def organ_params
-    params.require(:organ).permit(:name, :description)
+    params.require(:organ).permit(:name, :description, :photo)
   end
 
   def set_organ
