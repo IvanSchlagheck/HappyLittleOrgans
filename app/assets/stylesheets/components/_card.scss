@@ -3,13 +3,32 @@
   background-position: center;
   height: 180px;
   display: flex;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-category-home {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-bottom: solid rgb(228, 225, 225) 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-body {
@@ -21,6 +40,7 @@
   p {
     text-align: center;
     font-weight: 500;
+    font-size: 1.1em;
   }
   a {
     text-decoration: none;
@@ -40,4 +60,9 @@
 
 .card-whole:hover {
   transform: translateY(-5%);
+}
+
+.div-border {
+  width: 90%;
+  border-bottom: solid rgb(206, 205, 205) 1px;
 }
