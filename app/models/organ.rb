@@ -1,6 +1,6 @@
 class Organ < ApplicationRecord
   belongs_to :user
-  has_many :bookings, dependant: :destroy
+  has_many :bookings, dependent: :destroy
   
   validates :name, presence: true
   validates :description, presence: true
