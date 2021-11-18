@@ -7,12 +7,20 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   flex-direction: column;
+  position: relative;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  p {
+    color: #EB5759;
+    position: absolute;
+    text-shadow:rgb(179, 175, 175);
+    font-size: 29px;
+    right: 1rem;
+    bottom: 1.5rem;
   }
 }
 
@@ -26,7 +34,6 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }

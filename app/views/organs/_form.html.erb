@@ -1,6 +1,6 @@
 <%= simple_form_for(@organ) do |f| %>
   <%= f.input :name %>
-  <%= f.input :category, collection: ["Bladder", "Bone", "Brain", "Eyes", "Intestine", "Heart", "Kidney", "Liever", "Lungs", "Spleen", "Stomach"] %>
+  <%= f.input :category, collection: ["Bladder", "Bone", "Brain", "Eyes", "Intestine", "Heart", "Kidney", "Liver", "Lungs", "Spleen", "Stomach"] %>
   <%= f.input :description %>
   <%= f.input :price, :label => "Price (€)", as: :numeric%>
   <%= f.input :photo, as: :file %>
