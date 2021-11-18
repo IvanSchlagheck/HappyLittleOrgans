@@ -1,18 +1,27 @@
-<div class= "mx-3">
-<br>
-<%= cl_image_tag @organ.photo.key, height: 300, width: 400, crop: :fill %>
-<br>
-<br>
-<h1 class= "h2"><%= @organ.name %> </h1>
-<br>
-<p class= "h4"><%= @organ.description %> </p>
+<div class="d-flex">
+  <div class= "mx-5">
+    <div>
+      <%= cl_image_tag @organ.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+  </div>
 
-<br>
-<br>
-<br>
-<%= link_to 'All Organs', organs_path, class: "redbutton"%>
-<% if current_user == @organ.user %>
-  <%= link_to 'Edit', edit_organ_path(@organ), class: "redbutton"%>
-<% end %>
-  <%= link_to 'Book!', new_organ_booking_path(@organ), class: "bookbutton"%>
+  <div class="container">
+    <div class= "my-5">
+       <h1 class= "h2"><%= @organ.name %> </h1>
+    </div>
+    <div class= "my-5">
+      <p class= "h4"><%= @organ.description %> </p>
+    </div>
+
+    <div>
+    <p class="h4"><%= @organ.price %></p>
+    </div>
+    <div class= "d-flex my-5 align-middle">
+        <%= link_to 'All Organs', organs_path, class: "redbutton"%>
+    <% if current_user == @organ.user %>
+        <%= link_to 'Edit', edit_organ_path(@organ), class: "redbutton"%>
+    <% end %>
+      <%= link_to 'Book!', new_organ_booking_path(@organ), class: "bookbutton"%>
+    </div>
+  </div>
 </div>
