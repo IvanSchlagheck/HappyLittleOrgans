@@ -9,12 +9,35 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-bottom: solid rgb(228, 225, 225) 1px;
 }
 
 .card-body {
+  margin: auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    font-weight: 500;
+  }
   a {
     text-decoration: none;
+    color: black;
   }
+}
+
+.card-whole {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 310px;
+  width: 300px;
+  border-radius: 5px;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-whole:hover {
+  transform: translateY(-5%);
 }
