@@ -4,10 +4,11 @@
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
     <div class= "card-whole">
-      <div class="card-category" style="width: 18rem;">
+      <div class="card-category">
       <% if organ.photo.attached? %>
-        <%= cl_image_tag organ.photo.key, height: 160, width: 285, crop: :fill %>
+        <%= cl_image_tag organ.photo.key, crop: :fill %>
       <% end %>
+      <div class= "div-border mt-4"></div>
       </div>
       <div class="card-body">
         <p><%= organ.name %></p>
