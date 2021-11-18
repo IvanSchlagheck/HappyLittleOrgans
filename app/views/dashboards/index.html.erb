@@ -19,10 +19,20 @@
   <% @bookings.each do |booking| %>
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(booking.organ) do %>
-    <div class="card" style="width: 18rem;">
-      <%= cl_image_tag booking.organ.photo.key, height: 200, width: 285, crop: :fill %>
+    <div class= "card-whole">
+      <div class="card-category">
+      <% if booking.organ.photo.attached? %>
+        <%= cl_image_tag booking.organ.photo.key, crop: :fill %>
+      <% end %>
+      <div class= "div-border mt-4"></div>
+      </div>
       <div class="card-body">
-      <%= booking.organ.name %>
+        <p><%= booking.organ.name %></p>
+      </div>
+      <div class="card-dates p-2">
+      <% starts = booking.starts_on.strftime("%d/%m/%Y") %>
+      <% ends = booking.ends_at.strftime("%d/%m/%Y") %>
+        <p class= "text-center "><em><%= starts  %> - <%= ends  %></em></p>
       </div>
     </div>
     <% end %>
