@@ -18,9 +18,11 @@
         <% starts = booking.starts_on.strftime("%d/%m/%Y") %>
         <% ends = booking.ends_at.strftime("%d/%m/%Y") %>
         </div>
-        <div class ="reviewbutton">
-          <%= link_to "Review!", new_booking_review_path(booking)%>
-        </div>
+        <%= link_to  new_booking_review_path(booking) do %>
+          <div class ="reviewbutton">
+          <p class= "text-center">Review!</p>
+          </div>
+        <% end %>
       </div>
     </div>
     <% end %>
@@ -31,27 +33,30 @@
 <br>
 
 <h2>You have <%= @organs.count %> organs published.</h2>
+
 <div class="d-flex flex-wrap organs-link">
   <% @organs.each do |organ| %>
-  <div class="m-3" style="width: 300px">
-    <%= link_to organ_path(organ) do %>
-    <div class= "card-whole">
-      <div class="card-category">
-      <% if organ.photo.attached? %>
-        <%= cl_image_tag organ.photo.key, crop: :fill %>
-      <% end %>
-      <div class= "div-border mt-4"></div>
+    <div class="m-3" style="width: 300px">
+      <div class= "card-whole">
+        <%= link_to organ_path(organ) do %>
+          <div class="card-category">
+            <% if organ.photo.attached? %>
+              <%= cl_image_tag organ.photo.key, crop: :fill %>
+            <% end %>
+            <div class= "div-border mt-4"></div>
+          </div>
+        <% end %>
+          <div class= "card-bottom">
+            <div class="card-body">
+              <p><%= organ.name %></p>
+            </div>
+            <%= link_to organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <div class ="deletebutton">
+                  <i class="far fa-trash-alt trashcan"></i>
+              </div>
+            <% end %>
+          </div>
       </div>
-        <div class= "card-bottom">
-          <div class="card-body">
-            <p><%= organ.name %></p>
-          </div>
-          <div class ="deletebutton">
-              <i class="far fa-trash-alt trashcan"></i><%= link_to " ", organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-        </div>
     </div>
-    <% end %>
-  </div>
   <% end %>
 </div>
