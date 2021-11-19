@@ -43,9 +43,11 @@
       <% starts = booking.starts_on.strftime("%d/%m/%Y") %>
       <% ends = booking.ends_at.strftime("%d/%m/%Y") %>
         <p class= "text-center "><em><%= starts  %> - <%= ends  %></em></p>
+        <%= link_to "Review!", new_booking_review_path(booking), class: "redbutton" %>
       </div>
     </div>
     <% end %>
+
   </div>
   <% end %>
 </div>
