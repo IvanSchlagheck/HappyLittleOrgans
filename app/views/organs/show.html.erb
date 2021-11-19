@@ -24,10 +24,12 @@
   </div>
 </div>
 
+<div>
   <% @bookings.each do |booking| %>
     <% if booking.review %>
       <h3><%= booking.review.title %></h3>
-      <p id="timeframe">Booking: <%= booking.starts_on %> - <%= booking.ends_at %></p>
+      <p>Booking: <%= booking.starts_on %> - <%= booking.ends_at %></p>
       <p><%= booking.review.comment %></p>
     <% end %>
   <% end %>
+</div>
