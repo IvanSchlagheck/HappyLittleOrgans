@@ -2,33 +2,32 @@
   <div class= "mx-5 d-flex align-items-center border shadow rounded card-category-show">
     <% if @organ.photo.attached? %>
       <%= cl_image_tag @organ.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
+    <% end %>
   </div>
 
   <div class="container">
-    <div class= "my-5">
-       <h1 class= "h2"><%= @organ.name %> </h1>
-    </div>
-    <div class= "my-5">
-      <p class= "h4"><%= @organ.description %> </p>
-    </div>
-    <div>
+    <h1 class="h2 my-5"><%= @organ.name %> </h1>
+    <p class="h4 my-5"><%= @organ.description %> </p>
     <p class="h4"><%= @organ.price %>€ </p>
-    </div>
+
     <div class= "d-flex my-5 align-middle">
-        <%= link_to 'All Organs', organs_path, class: "redbutton"%>
-    <% if current_user == @organ.user %>
+      <%= link_to 'All Organs', organs_path, class: "redbutton"%>
+      <% if current_user == @organ.user %>
         <%= link_to 'Edit', edit_organ_path(@organ), class: "redbutton"%>
-    <% end %>
+      <% end %>
       <%= link_to 'Book!', new_organ_booking_path(@organ), class: "bookbutton"%>
     </div>
   </div>
 </div>
-
-  <% @bookings.each do |booking| %>
+<div class="container">
+  <div class="card">
+    <% @bookings.each do |booking| %>
     <% if booking.review %>
-      <h3><%= booking.review.title %></h3>
-      <p id="timeframe">Booking: <%= booking.starts_on %> - <%= booking.ends_at %></p>
-      <p><%= booking.review.comment %></p>
+      <%= booking.starts_on %>
+      <%= booking.ends_at %>
+      <%= booking.organ_id %>
+      <%= booking.review.title %>
     <% end %>
-  <% end %>
+    <% end %>
+  </div>
+</div>
