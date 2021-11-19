@@ -1,5 +1,5 @@
 <h2>You have <%= @organs.count %> organs published.</h2>
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap organs-link">
   <% @organs.each do |organ| %>
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
@@ -10,12 +10,14 @@
       <% end %>
       <div class= "div-border mt-4"></div>
       </div>
-      <div class="card-body">
-        <p><%= organ.name %></p>
-      </div>
-      <div class ="delete-link text-center bg-danger color text-decoration-none">
-          <%= link_to "Delete", organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
+        <div class= "card-bottom">
+          <div class="card-body">
+            <p><%= organ.name %></p>
+          </div>
+          <div class ="deletebutton">
+              <i class="far fa-trash-alt trashcan"></i><%= link_to "", organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
     </div>
     <% end %>
   </div>
@@ -25,7 +27,7 @@
 <br>
 
 <h2>You have <%= @bookings.count %> organs booked.</h2>
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap organs-link">
   <% @bookings.each do |booking| %>
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(booking.organ) do %>
