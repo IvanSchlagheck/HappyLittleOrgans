@@ -10,14 +10,17 @@
       <% end %>
       <div class= "div-border mt-4"></div>
       </div>
-      <div class="card-body">
-        <p><%= booking.organ.name %></p>
-      </div>
-      <div class="card-dates p-2">
-      <% starts = booking.starts_on.strftime("%d/%m/%Y") %>
-      <% ends = booking.ends_at.strftime("%d/%m/%Y") %>
-        <p class= "text-center "><em><%= starts  %> - <%= ends  %></em></p>
-        <%= link_to "Review!", new_booking_review_path(booking), class: "redbutton" %>
+      <div class="card-bottom">
+        <div class="card-body">
+          <p><%= booking.organ.name %></p>
+        </div>
+        <div class="card-dates p-2">
+        <% starts = booking.starts_on.strftime("%d/%m/%Y") %>
+        <% ends = booking.ends_at.strftime("%d/%m/%Y") %>
+        </div>
+        <div class ="reviewbutton">
+          <%= link_to "Review!", new_booking_review_path(booking)%>
+        </div>
       </div>
     </div>
     <% end %>
@@ -44,7 +47,7 @@
             <p><%= organ.name %></p>
           </div>
           <div class ="deletebutton">
-              <i class="far fa-trash-alt trashcan"></i><%= link_to "", organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } %>
+              <i class="far fa-trash-alt trashcan"></i><%= link_to " ", organ_path(organ), method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
         </div>
     </div>
