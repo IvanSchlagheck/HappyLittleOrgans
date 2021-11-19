@@ -24,12 +24,16 @@
   </div>
 </div>
 
-<div>
+<div class="container-reviews">
+  <h2>Reviews</h2>
   <% @bookings.each do |booking| %>
     <% if booking.review %>
-      <h3><%= booking.review.title %></h3>
-      <p>Booking: <%= booking.starts_on %> - <%= booking.ends_at %></p>
-      <p><%= booking.review.comment %></p>
+      <div class="border rounded p-4 shadow">
+        <h3 class="font-weight-bold"><%= booking.review.title %></h3>
+        <p><strong>Booking:</strong> <%= booking.starts_on %> - <%= booking.ends_at %></p>
+        <p class="font-italic"><%= booking.review.comment %></p>
+      </div>
+
     <% end %>
   <% end %>
 </div>
