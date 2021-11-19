@@ -24,3 +24,15 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="card">
+    <% @bookings.each do |booking| %>
+    <% if booking.review %>
+      <%= booking.starts_on %>
+      <%= booking.ends_at %>
+      <%= booking.organ_id %>
+      <%= booking.review.title %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

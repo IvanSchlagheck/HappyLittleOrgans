@@ -7,6 +7,7 @@ class OrgansController < ApplicationController
   end
 
   def show
+    @bookings = Booking.where(organ: @organ)
   end
 
   def new
