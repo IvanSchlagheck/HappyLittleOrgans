@@ -24,15 +24,11 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="card">
-    <% @bookings.each do |booking| %>
+
+  <% @bookings.each do |booking| %>
     <% if booking.review %>
-      <%= booking.starts_on %>
-      <%= booking.ends_at %>
-      <%= booking.organ_id %>
-      <%= booking.review.title %>
+      <h3><%= booking.review.title %></h3>
+      <p id="timeframe">Booking: <%= booking.starts_on %> - <%= booking.ends_at %></p>
+      <p><%= booking.review.comment %></p>
     <% end %>
-    <% end %>
-  </div>
-</div>
+  <% end %>
