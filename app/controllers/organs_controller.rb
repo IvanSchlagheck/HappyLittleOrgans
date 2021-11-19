@@ -1,5 +1,5 @@
 class OrgansController < ApplicationController
-  before_action :set_organ, only: [:show, :update, :edit]
+  before_action :set_organ, only: [:show, :update, :edit, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   def index
@@ -7,6 +7,7 @@ class OrgansController < ApplicationController
   end
 
   def show
+    @bookings = Booking.where(organ: @organ)
   end
 
   def new
@@ -29,6 +30,11 @@ class OrgansController < ApplicationController
   def update
     @organ.update(organ_params)
     redirect_to organ_path(@organ)
+  end
+
+  def destroy
+    @organ.destroy
+    redirect_to dashboard_path
   end
 
 

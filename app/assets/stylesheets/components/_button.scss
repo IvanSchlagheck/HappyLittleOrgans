@@ -42,3 +42,110 @@
 .topbutton:hover {
   color: #57cc99;
 }
+
+.deletebutton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #e41b1b;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .trashcan {
+    color: white;
+  }
+}
+
+.deletebutton:hover {
+  background: #a80505;
+  color: white;
+}
+
+.login-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #38a3a5;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 20px;
+  input {
+    text-decoration: none;
+    color: white !important;
+  }
+}
+
+.login-button:hover {
+  background: #57cc99;
+  color: white;
+}
+
+.signin-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #f08080;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 20px;
+  width: calc(100% - 39px);
+  display: block;
+  input {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.signin-button:hover {
+  background: #e6415f;
+  color: white;
+}
+
+.forgot-button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #7b7e7b;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 20px;
+  width: calc(100% - 39px);
+  display: block;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.forgot-button:hover {
+  background: #423a3c;
+  color: white;
+}
+
+.width-login {
+  width: calc(100% - 39px);
+}
+
+
+.reviewbutton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #38a3a5;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .trashcan {
+    color: white;
+  }
+}

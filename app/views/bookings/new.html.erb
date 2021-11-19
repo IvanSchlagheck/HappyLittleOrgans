@@ -1,8 +1,10 @@
-<div class>
-  <%= simple_form_for([ @organ, @booking ]) do |f| %>
-    <%= f.input :starts_on, as: :date, html5: true %>
-    <%= f.input :ends_at, as: :date, html5: true %>
-      <%= f.submit %>
+<div>
+<%= simple_form_for([ @organ, @booking ]) do |f| %>
+  <%= f.input :starts_on, as: :date, html5: true %>
+  <%= f.input :ends_at, as: :date, html5: true %>
+  <div class="login-button">
+    <%= f.button :submit %>
+  </div>
 <% end %>
 <br>
 <br>

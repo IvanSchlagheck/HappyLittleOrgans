@@ -44,14 +44,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 03px 10px 10px 10px;;
   p {
     text-align: center;
     font-weight: 500;
     font-size: 1.1em;
   }
+}
+
+.organs-link {
   a {
     text-decoration: none;
-    color: black;
+    color: black !important;
   }
 }
 
@@ -63,6 +67,7 @@
   transition: 0.4s;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-whole:hover {
@@ -81,4 +86,13 @@ h6 {
   font-size: 20px;
   right: 1rem;
   bottom: 0.5rem;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+.tag {
+  background-color: #e6899d;
+  border: transparent;
 }
