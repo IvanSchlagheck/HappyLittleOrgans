@@ -13,14 +13,22 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active mr-2">
+      <li class="nav-item active mr-3 my-2">
         <%= link_to "About", pages_about_path, class: "nav-link" %>
       </li>
-      <li class="nav-item active mr-2">
+      <li class="nav-item active mr-3 my-2">
         <%= link_to "Organs", organs_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://image.shutterstock.com/image-vector/healthy-biological-organ-smiling-lung-260nw-1239636475.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% if user_signed_in? %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, :transformation=>[ {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"}, {:radius=>"max"}, {:width=>200, :crop=>"scale"}] %>
+        <% else %>
+          <%= image_tag "https://image.shutterstock.com/image-vector/healthy-biological-organ-smiling-lung-260nw-1239636475.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <% else %>
+           <%= image_tag "https://image.shutterstock.com/image-vector/healthy-biological-organ-smiling-lung-260nw-1239636475.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% unless current_user %>
             <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>

@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @organ = Organ.find(params[:organ_id])
   end
+
   def create
     @organ = Organ.find(params[:organ_id])
     @booking = Booking.new(booking_params)
