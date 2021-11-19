@@ -26,3 +26,26 @@
   background: #ffccd5;
   color: white;
 }
+
+.deletebutton {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #e41b1b;
+  transition: background 0.3s ease;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .trashcan {
+    color: white;
+  }
+}
+
+.deletebutton:hover {
+  background: #a80505;
+  color: white;
+}
