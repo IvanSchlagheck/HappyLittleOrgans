@@ -6,12 +6,16 @@
   </div>
 
   <div class="container">
-      <%= link_to 'All Organs', organs_path, class: "topbutton"%>
-      <br>
-      <br>
-    <% if current_user == @organ.user %>
-        <%= link_to 'Edit', edit_organ_path(@organ), class: "topbutton"%>
-    <% end %>
+      <div class= "d-flex justify-content-end">
+        <%= link_to organs_path, class: "topbutton" do %>
+          <i class="fas fa-long-arrow-alt-left"></i> All Organs
+        <% end %>
+            <% if current_user == @organ.user %>
+              <%= link_to edit_organ_path(@organ), class: "topbutton" do %>
+                <i class="fas fa-edit"></i> Edit
+              <% end %>
+            <% end %>
+      </div>
     <div class= "my-5">
        <h1 class= "h2"><%= @organ.name %> </h1>
       <p><%= @organ.description %>
