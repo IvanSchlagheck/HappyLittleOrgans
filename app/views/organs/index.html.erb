@@ -1,5 +1,5 @@
 <h2>We have <%= @organs.length %> organs available for you.</h2>
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap organs-link">
   <% @organs.each do |organ| %>
   <div class="m-3" style="width: 300px">
     <%= link_to organ_path(organ) do %>
