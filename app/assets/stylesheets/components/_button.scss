@@ -27,6 +27,22 @@
   color: white;
 }
 
+.topbutton {
+  color: black;
+  text-decoration: underline;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+  float: right;
+}
+
+.topbutton:hover {
+  color: #57cc99;
+}
+
 .deletebutton {
   color: white;
   padding: 8px 24px;
@@ -133,5 +149,3 @@
     color: white;
   }
 }
-
-
